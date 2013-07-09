@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.form-section {
+	clear:both;
+	padding-top: 20px;
+}
+
+.form-sub-section {
+	margin-top:10px;
+}
+
+.input-long {
+	width: 454px;
+	height: 18px;
+}
+
+.inline-title {
+	font-weight:bold;
+	display:inline-block;
+	width:80px;
+}
+
+.input-inline-long {
+	width: 370px;
+	height: 18px;
+}
+
+ul#select-upload-lang {
+	list-style-type: none;
+}
+
+ul#select-upload-lang li {
+	float:left;
+	padding-right: 25px;
+}
+
+#submit-document-button {
+	margin-left:339px;
+}

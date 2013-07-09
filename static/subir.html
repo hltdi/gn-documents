@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tahekami.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Tahekami</title>
+<link href="style/subir.css" rel="stylesheet" type="text/css" />
+<!-- InstanceEndEditable -->
+<link href="style/style.css" rel="stylesheet" type="text/css" />
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+  <div id="menu-bar">
+    <ol>
+      <li class="menu-bar-item"><a href="inicio">Inicio</a> | </li>
+      <li class="menu-bar-item"><a href="subir">Subir un documento</a> | </li>
+      <li class="menu-bar-item"><a href="catalogo">Catálogo</a> | </li>
+      <li class="menu-bar-item">Acerca de | </li>
+      <li class="menu-bar-item">Contacto</li>
+    </ol>
+  </div>
+  <div id="main">
+		<!-- InstanceBeginEditable name="EditRegion1" -->
+    <div class="header">
+    	<span id="title">Tahekami</span>
+    </div>
+    <div id="content">
+    	<h1>Subir un Documento</h1>
+      <div id="form">
+      	<div class="form-section">
+        	<h3>T&iacute;tulo</h3>
+          <input class="input-long" name="titulo-input" type="text" value="Escribe aquí el título del documento" size="480" maxlength="500" />
+        </div>
+        <div class="form-section">
+        	<h3>Idioma</h3>
+          <ul id="select-upload-lang">
+          	<li><input name="castellano" type="radio" value="castellano" checked="checked" /> Castellano
+            </li>	
+          	<li><input name="guarani" type="radio" value="guarani" /> Guaran&iacute;
+            </li>
+            <li><input name="bilingue" type="radio" value="castellano y guarani" /> Castellano y Guaran&iacute;
+            </li>
+          </ul>
+        </div>
+        <div class="form-section">
+        	<h3>Archivo(s)</h3>
+          <div class="form-sub-section">
+          	<span class="inline-title">Castellano: </span><input name="archivo-castellano" type="file"/>
+           </div>
+           <div class="form-sub-section">
+            <span class="inline-title">Guaran&iacute;: </span><input name="archivo-castellano" type="file"/>
+            </div>
+          </div>
+          <div class="form-section">
+          	<h3>Etiquetas (separadas por coma)</h3>
+            <input class="input-long" name="tags" type="text" value="Ej... literatura, poesía, roa bastos" />
+          </div>
+          <div class="form-section">
+          	<h3>Informaci&oacute;n adicional</h3>
+            <div class="form-sub-section">
+            	<span class="inline-title">Autor: </span>
+              <input class="input-inline-long" name="autor" type="text" />
+            </div>
+            <div class="form-sub-section">
+            	<span class="inline-title">Instituto: </span>
+              <input class="input-inline-long" name="autor" type="text" />
+            </div>
+            <div class="form-sub-section">
+            	<input name="descargar" type="checkbox" value="desargar" checked="checked" />
+              <span> Permitir la descarga</span>
+            </div>
+          </div>
+          <div>
+          <button id="submit-document-button" class="submit-button" name="search-button" value="Buscar" type="submit"><span id="search-button-text">Enviar</span></button>
+        </div> <!--submit-button-->
+        </div>
+    </div>
+    <!-- InstanceEndEditable -->
+	</div> <!--main-->
+</body>
+<!-- InstanceEnd --></html>
