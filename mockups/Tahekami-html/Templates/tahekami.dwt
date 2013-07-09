@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Tahekami</title>
+<!-- TemplateEndEditable -->
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+</head>
+<body>
+  <div id="menu-bar">
+    <ol>
+      <li class="menu-bar-item"><a href="../inicio.html">Inicio</a> | </li>
+      <li class="menu-bar-item"><a href="subir.html">Subir un documento</a> | </li>
+      <li class="menu-bar-item"><a href="catalogo.html">Catálogo</a> | </li>
+      <li class="menu-bar-item">Acerca de | </li>
+      <li class="menu-bar-item">Contacto</li>
+    </ol>
+  </div>
+  <div id="main">
+		<!-- TemplateBeginEditable name="EditRegion1" -->
+    <!-- TemplateEndEditable -->
+	</div> <!--main-->
+</body>
+</html>
