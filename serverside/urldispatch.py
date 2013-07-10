@@ -7,6 +7,8 @@ from bottle import route
 from bottle import static_file
 from bottle import template
 
+import search
+
 """
 This module handles all of the URL dispatching for gn-documents, mapping from
 URLs to the functions that will be called in response.
@@ -17,6 +19,10 @@ import urllib.request
 @route('/')
 def index():
     redirect("/inicio")
+
+@route('/buscar/:q')
+def buscar(q):
+    return search.search(q)
 
 @error(404)
 def error404(error):
@@ -37,3 +43,4 @@ def subir():
 @route('/style/<fn>')
 def style(fn):
     return static_file(fn, root='static/style')
+
