@@ -18,9 +18,9 @@ import urllib.request
 
 @route('/')
 def index():
-    redirect("/inicio")
+    return static_file('index.html', root='static')
 
-@route('/buscar/:q')
+@route('/buscar/<q>')
 def buscar(q):
     return search.search(q)
 
@@ -40,7 +40,7 @@ def inicio():
 def subir():
     return static_file('subir.html', root='static')
 
-@route('/style/<fn>')
+@route('/css/<fn>')
 def style(fn):
-    return static_file(fn, root='static/style')
+    return static_file(fn, root='css')
 
