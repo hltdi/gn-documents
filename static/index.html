@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js">
+  </script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="SearchCtrl">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <!--Sidebar content-->
+        Search: <input ng-model="query">
+      </div>
+      <div class="span1"></div>
+      <div class="span9">
+        <!--Body content-->
+        <ul class="phones">
+          <li ng-repeat="result in results">
+            <a href="{{result.url}}">{{result.title}}</a>
+            <p>{{result.snippet}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

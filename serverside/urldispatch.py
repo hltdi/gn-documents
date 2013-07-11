@@ -44,3 +44,6 @@ def subir():
 def style(fn):
     return static_file(fn, root='css')
 
+@route('/js/<fn>')
+def js(fn):
+    return static_file(fn, root='js')
