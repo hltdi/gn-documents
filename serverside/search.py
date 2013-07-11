@@ -5,7 +5,7 @@ def search(query):
     for i in range(5):
         msg = {}
         msg['title'] = 'title' + str(i)
-        msg['snippet'] = 'snippet' + str(i)
+        msg['snippet'] = "snippet {0}: {1}".format(i, query)
         msg['url'] = 'url' + str(i)
         out.append(msg)
     return json.dumps(out)    
