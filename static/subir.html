@@ -25,6 +25,7 @@
     <div class="header">
     	<span id="title">Tahekami</span>
     </div>
+    <form action="/upload" method="post" enctype="multipart/form-data">	
     <div id="content">
     	<h1>Subir un Documento</h1>
       <div id="form">
@@ -43,13 +44,19 @@
             </li>
           </ul>
         </div>
+	
+  		Category:      <input type="text" name="category" />
+  		Select a file: <input type="file" name="upload" />
+  		<input type="submit" value="Start upload" />
+	</form>
+
         <div class="form-section">
         	<h3>Archivo(s)</h3>
           <div class="form-sub-section">
-          	<span class="inline-title">Castellano: </span><input name="archivo-castellano" type="file"/>
+          	<span class="inline-title">Castellano: </span><input name="uploadSpanish" type="file"/>
            </div>
            <div class="form-sub-section">
-            <span class="inline-title">Guaran&iacute;: </span><input name="archivo-castellano" type="file"/>
+            <span class="inline-title">Guaran&iacute;: </span><input name="uploadGuarani" type="file"/>
             </div>
           </div>
           <div class="form-section">
@@ -76,6 +83,7 @@
         </div> <!--submit-button-->
         </div>
     </div>
+    </form> 
     <!-- InstanceEndEditable -->
 	</div> <!--main-->
 </body>
