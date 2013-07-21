@@ -1,32 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tahekami.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Tahekami</title>
-<!-- InstanceEndEditable -->
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
-</head>
-<body>
-  <div id="menu-bar">
-    <ol>
-      <li class="menu-bar-item"><a href="inicio">Inicio</a> | </li>
-      <li class="menu-bar-item"><a href="subir">Subir un documento</a> | </li>
-      <li class="menu-bar-item"><a href="catalogo">Catálogo</a> | </li>
-      <li class="menu-bar-item">Acerca de | </li>
-      <li class="menu-bar-item">Contacto</li>
-    </ol>
-  </div>
-  <div id="main">
-		<!-- InstanceBeginEditable name="EditRegion1" -->
-    <div class="header">
-    	<span id="title">Tahekami</span>
-    </div> <!-- end header -->
-    <div id="content">
-    	<h1>Categor&iacute;as</h1>
-      <div id="cat-autores">
+%rebase layout
+
+<div class="header">
+    <span id="title">Tahekami</span>
+</div> <!-- end header -->
+
+<div id="content">
+	<h1>Categor&iacute;as</h1>
+    <div id="cat-autores">
       	<h2>Autores</h2>
         <table width="100%">
           <tbody>
@@ -133,8 +113,4 @@
           </tbody>
         </table>
       </div> <!-- end cat-etiquetas -->
-    </div> <!-- end content -->
-    <!-- InstanceEndEditable -->
-	</div> <!--main-->
-</body>
-<!-- InstanceEnd --></html>
+</div> <!-- end content -->
