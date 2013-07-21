@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PYTHONPATH="serverside"
-python3 scripts/devserver.py
+export PYTHONPATH=$PYTHONPATH:../serverside
+python3 devserver.py
 
