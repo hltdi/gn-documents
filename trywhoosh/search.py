@@ -11,7 +11,8 @@ def search(searcher, ix, q):
         results = searcher.search(query)
         print(results)
         for result in results:
-            print(result)
+            print("**", result['path'])
+            print(result.highlights("content"))
 
 def main():
     ix = whoosh.index.open_dir(INDEXDIR)
@@ -21,7 +22,8 @@ def main():
                 q = input("? ")
                 if not q: continue
                 search(searcher, ix, q)
-            except: break
+            except Exception as e:
+                break
     print()
 
 if __name__ == "__main__": main()

@@ -9,7 +9,7 @@ INDEXDIR = "indexdir"
 THESCHEMA = Schema(title=TEXT(stored=True),
                    path=ID(stored=True),
                    tags=KEYWORD(stored=True,lowercase=True,commas=True),
-                   content=TEXT)
+                   content=TEXT(stored=True))
 
 def store_index():
     if not os.path.exists(INDEXDIR):
