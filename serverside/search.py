@@ -1,11 +1,19 @@
 import json
 
-def search(query):
+import whoosh.index
+from whoosh.qparser import QueryParser
+from start_index import INDEXDIR 
+
+def search(q):
     out = []
-    for i in range(5):
-        msg = {}
-        msg['title'] = 'title' + str(i)
-        msg['snippet'] = "snippet {0}: {1}".format(i, query)
-        msg['url'] = 'url' + str(i)
-        out.append(msg)
-    return json.dumps(out)    
+    ix = whoosh.index.open_dir(INDEXDIR)
+    with ix.searcher() as searcher:
+        query = QueryParser("content", ix.schema).parse(q)
+        results = searcher.search(query)
+        for result in results:
+            msg = {}
+            msg['title'] = result['title']
+            msg['snippet'] = result.highlights("content")
+            msg['url'] = "docs/" + result['path']
+            out.append(msg)
+    return json.dumps(out)

@@ -38,6 +38,10 @@ def upload_files():
     spanishDoc.save('uploadedDocs') # appends spanishDoc.filename automatically	
     return 'OK'
 
+@route('/docs/<fn>')
+def docs(fn):
+    return static_file(fn, root='docs')
+
 @route('/css/<fn>')
 def style(fn):
     return static_file(fn, root='css')

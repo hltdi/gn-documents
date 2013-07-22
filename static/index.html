@@ -26,7 +26,7 @@
         <ul>
           <li ng-repeat="result in results">
             <a href="{{result.url}}">{{result.title}}</a>
-            <p>{{result.snippet}}</p>
+            <p ng-bind-html-unsafe="result.snippet"></p>
           </li>
         </ul>
 
