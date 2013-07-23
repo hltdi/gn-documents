@@ -12,21 +12,23 @@
 	
 	<!-- js files -->
   	<script src="http://code.jquery.com/jquery.js"></script>
+  	<script src="js/menu.js"></script>
 </head>
 
 <body>
-  <div id="menu-bar">
-    <ol>
-      <li class="menu-bar-item"><a href="index">Inicio</a> | </li>
-      <li class="menu-bar-item"><a href="upload">Subir un documento</a> | </li>
-      <li class="menu-bar-item"><a href="catalog">Catálogo</a></li>
-    </ol>
-  </div>
-  <div id="main">
-  	%include
-  </div>
-  
-  
-  
+	<div class="navbar navbar-fixed-top">
+  		<div class="navbar-inner">
+    		<ul class="nav" id="menu">
+      			<li><a href="index">Inicio</a></li>
+      			<li class="divider-vertical"></li>
+      			<li><a href="upload">Subir un documento</a></li>
+      			<li class="divider-vertical"></li>
+      			<li><a href="catalog">Catálogo</a></li>
+    		</ul>
+  		</div>
+	</div>
+	<div id="main">
+  		%include
+  	</div>
 </body>
 </html>
