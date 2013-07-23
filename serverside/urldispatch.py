@@ -34,9 +34,9 @@ def upload_files():
     spanishDoc = request.files.get('uploadSpanish')
     guaraniDoc = request.files.get('uploadGuarani')
     
-    guaraniDoc.save('uploadedDocs') # appends guaraniDoc.filename automatically
-    spanishDoc.save('uploadedDocs') # appends spanishDoc.filename automatically	
-    return 'OK'
+    guaraniDoc.save('uploadedDocs', overwrite=True) # appends guaraniDoc.filename automatically
+    spanishDoc.save('uploadedDocs', overwrite=True) # appends spanishDoc.filename automatically	
+    return {'success':True, 'message': 'Documentos subidos exitosamente'}
 
 @route('/docs/<fn>')
 def docs(fn):

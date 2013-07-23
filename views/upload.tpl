@@ -53,5 +53,10 @@
           	</div>
         </div>
 	</div>	
-</form> 
+</form>
+
+<!-- js files -->
+<script src="js/upload.js"></script>
+<script src="js/jquery.form.min.js"></script>
+ 
 	
