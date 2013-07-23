@@ -46,6 +46,10 @@ def docs(fn):
 def style(fn):
     return static_file(fn, root='css')
 
+@route('/favicon.ico')
+def favicon():
+    return static_file('favicon.ico', root='css')
+
 @route('/js/<fn>')
 def js(fn):
     return static_file(fn, root='js')
