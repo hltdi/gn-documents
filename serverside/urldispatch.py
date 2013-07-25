@@ -5,6 +5,7 @@ from bottle import request
 from bottle import route
 from bottle import static_file
 from bottle import template
+from bottle import redirect
 
 import search
 
@@ -13,23 +14,30 @@ This module handles all of the URL dispatching for gn-documents, mapping from
 URLs to the functions that will be called in response.
 """
 
+APPNAME = "/tahekami"
+
 @route('/')
+def top():
+    redirect(APPNAME)
+
+@route(APPNAME)
+@route(APPNAME + '/')
 def index_test():
     return static_file('index.html', root='static')
 
-@route('/index')
+@route(APPNAME + '/index')
 def index():
     return template('index')
 
-@route('/catalog')
+@route(APPNAME + '/catalog')
 def catalog():
     return template('catalog')
 
-@route('/upload', method='GET')
+@route(APPNAME + '/upload', method='GET')
 def upload_page():
     return template('upload')
 
-@route('/upload', method='POST')
+@route(APPNAME + '/upload', method='POST')
 def upload_files():
     spanishDoc = request.files.get('uploadSpanish')
     guaraniDoc = request.files.get('uploadGuarani')
@@ -38,11 +46,11 @@ def upload_files():
     spanishDoc.save('uploadedDocs', overwrite=True) # appends spanishDoc.filename automatically	
     return {'success':True, 'message': 'Documentos subidos exitosamente'}
 
-@route('/docs/<fn>')
+@route(APPNAME + '/docs/<fn>')
 def docs(fn):
     return static_file(fn, root='docs')
 
-@route('/css/<fn>')
+@route(APPNAME + '/css/<fn>')
 def style(fn):
     return static_file(fn, root='css')
 
@@ -50,7 +58,7 @@ def style(fn):
 def favicon():
     return static_file('favicon.ico', root='css')
 
-@route('/js/<fn>')
+@route(APPNAME + '/js/<fn>')
 def js(fn):
     return static_file(fn, root='js')
 
@@ -58,6 +66,6 @@ def js(fn):
 def error404(error):
     return 'Nothing here, sorry'
 
-@route('/buscar/<q>')
+@route(APPNAME + '/buscar/<q>')
 def buscar(q):
     return search.search(q)
