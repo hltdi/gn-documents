@@ -3,7 +3,7 @@
 <div class="header">
     	<span id="title">Tahekami</span>
 </div>
-<form action="/upload" method="post" enctype="multipart/form-data">	
+<form action="upload" method="post" enctype="multipart/form-data">	
     <div id="content">
     	<h1>Subir un Documento</h1>
     	<div id="form">
