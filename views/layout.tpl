@@ -11,6 +11,9 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	
 	<!-- js files -->
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js">
+    </script>
   	<script src="http://code.jquery.com/jquery.js"></script>
   	<script src="js/menu.js"></script>
 </head>
@@ -27,7 +30,7 @@
     		</ul>
   		</div>
 	</div>
-	<div id="main">
+	<div id="main" class="container-fluid">
   		%include
   	</div>
 </body>

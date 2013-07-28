@@ -8,10 +8,6 @@ body {
 	padding-left:40px;
 }
 
-div {
-	display: block;
-}
-
 table {
 	display: table;
 	border-collapse: separate;
@@ -25,18 +21,27 @@ tbody {
 	border-color: inherit;
 }
 
-#main {
-	margin-left:45px;
-	padding-top:30px;
-	width:800px;
-}
-
 .header {
 	margin-bottom: 30px;
 }
 
 ul, ol {
 	list-style: none;
+}
+
+label.frontpage {
+  display: inline;
+}
+
+div.centerbox {
+  text-align: left;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input.check {
+  display: inline;
 }
 
 .menu-bar-item {
