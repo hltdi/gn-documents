@@ -4,8 +4,6 @@ from bottle import error
 from bottle import request
 from bottle import route
 from bottle import static_file
-from bottle import template
-from bottle import redirect
 
 import search
 
@@ -18,17 +16,33 @@ URLs to the functions that will be called in response.
 def index_test():
     return static_file('index.html', root='static')
 
-@route('/index')
+@route('/index', method='GET')
 def index():
-    return template('index')
+    return static_file('index.html', root='app')
 
-@route('/catalog')
-def catalog():
-    return template('catalog')
+@route('/partials/<fn>', method='GET')
+def partials(fn):
+    return static_file(fn, root='app/partials')
 
-@route('/upload', method='GET')
-def upload_page():
-    return template('upload')
+@route('/css/<fn>')
+def css(fn):
+    return static_file(fn, root='app/css')
+
+@route('/js/<fn>')
+def js(fn):
+    return static_file(fn, root='app/js')
+
+@route('/img/<fn>')
+def img(fn):
+    return static_file(fn, root='app/img')
+
+@route('/lib/<fn>')
+def lib(fn):
+    return static_file(fn, root='app/lib')
+
+@error(404)
+def error404(error):
+    return ('Nothing here, sorry: ' + str(error))
 
 @route('/upload', method='POST')
 def upload_files():
@@ -42,22 +56,6 @@ def upload_files():
 @route('/docs/<fn>')
 def docs(fn):
     return static_file(fn, root='docs')
-
-@route('/css/<fn>')
-def style(fn):
-    return static_file(fn, root='css')
-
-@route('/favicon.ico')
-def favicon():
-    return static_file('favicon.ico', root='css')
-
-@route('/js/<fn>')
-def js(fn):
-    return static_file(fn, root='js')
-
-@error(404)
-def error404(error):
-    return ('Nothing here, sorry: ' + str(error))
 
 @route('/buscar/<q>')
 def buscar(q):
