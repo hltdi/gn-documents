@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('gndocuments', []).
+angular.module('gndocuments', ['totalFilesServices']).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/search', {templateUrl: 'partials/search.html',   controller: SearchCtrl}).

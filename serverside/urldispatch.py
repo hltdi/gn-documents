@@ -6,21 +6,24 @@ from bottle import route
 from bottle import static_file
 
 import search
+import os
 
 """
 This module handles all of the URL dispatching for gn-documents, mapping from
 URLs to the functions that will be called in response.
 """
 
+UPLOADED_DOCS_DIR = 'uploadedDocs';
+
 @route('/')
 def index_test():
     return static_file('index.html', root='static')
 
-@route('/index', method='GET')
+@route('/index')
 def index():
     return static_file('index.html', root='app')
 
-@route('/partials/<fn>', method='GET')
+@route('/partials/<fn>')
 def partials(fn):
     return static_file(fn, root='app/partials')
 
@@ -48,10 +51,17 @@ def error404(error):
 def upload_files():
     spanishDoc = request.files.get('uploadSpanish')
     guaraniDoc = request.files.get('uploadGuarani')
-    
-    guaraniDoc.save('uploadedDocs', overwrite=True) # appends guaraniDoc.filename automatically
-    spanishDoc.save('uploadedDocs', overwrite=True) # appends spanishDoc.filename automatically	
+    if(guaraniDoc is not None):
+        guaraniDoc.save(UPLOADED_DOCS_DIR, overwrite=True) # appends guaraniDoc.filename automatically
+    if(spanishDoc is not None):
+        spanishDoc.save(UPLOADED_DOCS_DIR, overwrite=True) # appends spanishDoc.filename automatically	
     return {'success':True, 'message': 'Documentos subidos exitosamente'}
+
+@route('/uploaded/totalfiles')
+def count_uploaded_files():
+    #ignore .gitignore file
+    total = len([name for name in os.listdir(UPLOADED_DOCS_DIR) if os.path.isfile(UPLOADED_DOCS_DIR + '/' + name)]) - 1 
+    return {'total': total}
 
 @route('/docs/<fn>')
 def docs(fn):

@@ -1,5 +1,7 @@
 'use strict';
 
+/* Controllers */
+
 function MenuCtrl($scope) {
 	$scope.menuList = [
 	   {id:0, url:'#/search', text:"Inicio", style:"active"},
@@ -15,8 +17,7 @@ function MenuCtrl($scope) {
 	}
 }
 
-/* Controllers */
-function SearchCtrl($scope, $http) {
+function SearchCtrl($scope, $http, TotalFiles) {
 
   $scope.fetch = function() {
     $scope.code = null;
@@ -31,6 +32,9 @@ function SearchCtrl($scope, $http) {
         alert("search failya");
     });
   };
+  
+  $scope.totalDocs = TotalFiles.get();
+   
 }
 
 function UploadCtrl($scope, $http) {
