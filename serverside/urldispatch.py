@@ -17,10 +17,6 @@ UPLOADED_DOCS_DIR = 'uploadedDocs';
 
 @route('/')
 def index_test():
-    return static_file('index.html', root='static')
-
-@route('/index')
-def index():
     return static_file('index.html', root='app')
 
 @route('/partials/<fn>')
