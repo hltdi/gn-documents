@@ -78,6 +78,16 @@ input.check {
 	height: 18px;
 }
 
+#search-results-input {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#search-results-button {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 #select-lang {
 	padding-top: 12px;
 }

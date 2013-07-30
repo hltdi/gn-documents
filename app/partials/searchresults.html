@@ -1,0 +1,16 @@
+<div ng-controller="SearchCtrl"
+     data-ng-init="fetch()">
+  <div>
+    <input id="search-results-input" ng-model="query"
+           ng-init="query=$routeParams.query"/>
+    <button id="search-results-button" ng-click="jumpToResults()">BUSCAR</button>
+  </div>
+
+  <!--Body content-->
+  <ul>
+    <li ng-repeat="result in results">
+      <a href="{{result.url}}">{{result.title}}</a>
+      <p ng-bind-html-unsafe="result.snippet"></p>
+    </li>
+  </ul>
+</div>   

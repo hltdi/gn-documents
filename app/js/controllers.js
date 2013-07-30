@@ -17,7 +17,10 @@ function MenuCtrl($scope) {
 	}
 }
 
-function SearchCtrl($scope, $http, TotalFiles) {
+function SearchCtrl($scope, $http, $location, $routeParams, TotalFiles) {
+  $scope.$routeParams = $routeParams;
+
+  $scope.query = $routeParams.query;
 
   $scope.fetch = function() {
     $scope.code = null;
@@ -31,6 +34,10 @@ function SearchCtrl($scope, $http, TotalFiles) {
       error(function(data, status) {
         alert("search failya");
     });
+  };
+
+  $scope.jumpToResults = function() {
+    $location.path('/searchresults/' + $scope.query);
   };
   
   $scope.totalDocs = TotalFiles.get();
@@ -56,3 +63,4 @@ function UploadCtrl($scope, $http) {
 function CatalogCtrl($scope, $http) {
 	
 }
+

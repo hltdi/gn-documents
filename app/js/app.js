@@ -3,10 +3,15 @@
 /* App Module */
 
 angular.module('gndocuments', ['totalFilesServices']).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-    when('/search', {templateUrl: 'partials/search.html',   controller: SearchCtrl}).
-    when('/upload', {templateUrl: 'partials/upload.html', controller: UploadCtrl}).
-    when('/catalog', {templateUrl: 'partials/catalog.html', controller: CatalogCtrl}).
-    otherwise({redirectTo: '/search'});
+config(['$locationProvider','$routeProvider',
+    function($locationProvider, $routeProvider) {
+      $routeProvider.
+        when('/search', {templateUrl: 'partials/search.html',   controller: SearchCtrl}).
+        when('/searchresults/:query', {templateUrl: 'partials/searchresults.html',   controller: SearchCtrl}).
+        when('/upload', {templateUrl: 'partials/upload.html', controller: UploadCtrl}).
+        when('/catalog', {templateUrl: 'partials/catalog.html', controller: CatalogCtrl}).
+        otherwise({redirectTo: '/search'});
+
+      // XXX: when do we need this? ...
+      // $locationProvider.html5Mode(true);
 }]);
