@@ -1,54 +1,70 @@
 <div ng-controller="UploadCtrl">
-	<div class="header">
-	    	<span id="title">Tahekami</span>
-	</div>
-	<form enctype="multipart/form-data" ng-submit="uploadFiles()">	
-	    <div id="content">
-	    	<h1>Subir un Documento</h1>
-	    	<div id="form">
-	    		<div class="form-section">
-	    			<h3>T&iacute;tulo</h3>
-	        		<input class="input-long" name="titulo-input" type="text" value="Escribe aquí el título del documento" size="480" maxlength="500" />
-	    		</div>
-	       		<div class="form-section">
-	        		<h3>Idioma</h3>
-	          		<ul id="select-upload-lang">
-	          			<li><input name="castellano" type="radio" value="castellano" checked="checked"/> Castellano</li>	
-	          			<li><input name="guarani" type="radio" value="guarani" /> Guaran&iacute;</li>
-	            		<li><input name="bilingue" type="radio" value="castellano y guarani" /> Castellano y Guaran&iacute;</li>
-	          		</ul>
-	        	</div>
-				<div class="form-section">
-	        		<h3>Archivo(s)</h3>
-	          		<div class="form-sub-section">
-	          			<span class="inline-title">Castellano: </span><input name="uploadSpanish" type="file"/>
-	           		</div>
-	           		<div class="form-sub-section">
-	            		<span class="inline-title">Guaran&iacute;: </span><input name="uploadGuarani" type="file"/>
-	            	</div>
-	          	</div>
-	          
-	          	<div class="form-section">
-	          		<h3>Etiquetas (separadas por coma)</h3>
-	            	<input class="input-long" name="tags" type="text" value="Ej... literatura, poesía, roa bastos" />
-	          	</div>
-	          	
-	          	<div class="form-section">
-	          		<h3>Informaci&oacute;n adicional</h3>
-	            	<div class="form-sub-section">
-	            	<span class="inline-title">Autor: </span>
-	              	<input class="input-inline-long" name="autor" type="text" />
-	            </div>
-	            <div class="form-sub-section">
-	            	<span class="inline-title">Instituto: </span>
-	              	<input class="input-inline-long" name="autor" type="text" />
-	            </div>
-	            <div class="form-sub-section">
-	            	<input name="descargar" type="checkbox" value="desargar" checked="checked" />
-	              	<span> Permitir la descarga</span>
-	            </div>
-	            <input class="btn-primary" type="submit" value="Enviar">
-	        </div>
-		</div>	
+	<h1>Tahekami</h1>
+	<form class="form-horizontal" enctype="multipart/form-data" ng-submit="uploadFiles()">	
+	    <fieldset>
+    		<legend>Subir un Documento</legend>
+	    	<div class="control-group">
+    			<label class="control-label" for="titleField">T&iacute;tulo</label>
+    			<div class="controls">
+      				<input type="text" class="input-xxlarge" id="titleField" placeholder="Escriba aqui el titulo del documento">
+    			</div>
+  			</div>	
+	    	<div class="control-group">
+	    		<label class="control-label">Idioma</label>
+    			<div class="controls">
+      				<label class="radio">
+					  <input type="radio" name="langOptions" value="option1"> Castellano
+					</label>
+					<label class="radio">
+					  <input type="radio" name="langOptions" value="option2"> Guaran&iacute;
+					</label>
+					<label class="radio">
+					  <input type="radio" name="langOptions" value="option3"> Castellano y Guaran&iacute;
+					</label>
+      			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="spanishFileField">Archivo en Castellano</label>
+    			<div class="controls">
+      				<input name="uploadSpanish" type="file" id="spanishFileField"/>
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="guaraniFileField">Archivo en Guarani</label>
+    			<div class="controls">
+      				<input name="uploadGuarani" type="file" id="guaraniFileField"/>
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="tags">Etiquetas (separadas por coma)</label>
+    			<div class="controls">
+      				<input type="text" class="input-xxlarge" id="tags" placeholder="Ej... literatura, poesía, roa bastos">
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="author">Autor</label>
+    			<div class="controls">
+      				<input type="text" class="input-xlarge" id="author">
+    			</div>
+  			</div>
+  			<div class="control-group">
+    			<label class="control-label" for="institute">Instituto</label>
+    			<div class="controls">
+      				<input type="text" class="input-xlarge" id="institute">
+    			</div>
+  			</div>
+  			<div class="control-group">
+		    	<div class="controls">
+		      		<label class="checkbox">
+		        		<input type="checkbox" checked="checked"> Permitir la descarga
+		      		</label>
+		     	</div>
+		  	</div>
+			<div class="form-actions">
+  				<input class="btn btn-primary" type="submit" value="Enviar">
+ 			</div>
+	    </fieldset>
 	</form>
-</div>
+</div> 
+	    
+	    

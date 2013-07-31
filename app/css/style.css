@@ -4,8 +4,11 @@ body {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	background-color:#fcfcfc;
-	padding-top:40px;
-	padding-left:40px;
+}
+
+.main {
+	padding-top:70px;
+	padding-left:40px;	
 }
 
 table {

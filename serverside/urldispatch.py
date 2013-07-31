@@ -16,7 +16,7 @@ URLs to the functions that will be called in response.
 UPLOADED_DOCS_DIR = 'uploadedDocs';
 
 @route('/')
-def index_test():
+def index():
     return static_file('index.html', root='app')
 
 @route('/partials/<fn>')
