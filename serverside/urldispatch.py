@@ -7,6 +7,7 @@ from bottle import static_file
 
 import search
 import os
+import json
 
 """
 This module handles all of the URL dispatching for gn-documents, mapping from
@@ -45,12 +46,18 @@ def error404(error):
 
 @route('/upload', method='POST')
 def upload_files():
-    spanishDoc = request.files.get('uploadSpanish')
-    guaraniDoc = request.files.get('uploadGuarani')
-    if(guaraniDoc is not None):
-        guaraniDoc.save(UPLOADED_DOCS_DIR, overwrite=True) # appends guaraniDoc.filename automatically
-    if(spanishDoc is not None):
-        spanishDoc.save(UPLOADED_DOCS_DIR, overwrite=True) # appends spanishDoc.filename automatically	
+    parameters = {"title" : request.forms.get('title'), "language": request.forms.get('language'),
+                  "tags" : request.forms.get('tags'), "author" : request.forms.get('author'),
+                  "institute" : request.forms.get('institute'), "downloadable" : request.forms.get('downloadable')}
+    files = []
+    files.append(request.files.get('uploadSpanish'))
+    files.append(request.files.get('uploadGuarani'))
+    for file in files:
+        if(file is not None):
+            file.save(UPLOADED_DOCS_DIR, overwrite=True) # appends file.filename automatically
+            f = open(UPLOADED_DOCS_DIR + '/' + file.filename + '.json', 'w')
+            f.write(json.dumps(parameters))
+            f.close()
     return {'success':True, 'message': 'Documentos subidos exitosamente'}
 
 @route('/uploaded/totalfiles')
