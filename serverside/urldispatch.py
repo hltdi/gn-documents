@@ -83,4 +83,11 @@ def docs(fn):
 @route('/buscar/<q>')
 def buscar(q):
     response.set_header('Cache-Control', 'No-Cache')
+    response.set_header("Content-Type", "application/json")
     return search.search(q)
+
+@route('/etiqueta/<tag>')
+def buscar_etiqueta(tag):
+    response.set_header('Cache-Control', 'No-Cache')
+    response.set_header("Content-Type", "application/json")
+    return search.search_by_tag(tag)
