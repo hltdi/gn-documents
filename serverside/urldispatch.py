@@ -72,6 +72,8 @@ def alltags():
     ## XXX(alexr): do we need to set these?
     response.set_header('Cache-Control', 'No-Cache')
     response.set_header("Content-Type", "application/json")
+    if not os.path.exists("indexdir/alltags.json"):
+        return json.dumps({'tags':['foo','bar','baz','qux']})
     return static_file('alltags.json', root='indexdir')
 
 @route('/docs/<fn>')
