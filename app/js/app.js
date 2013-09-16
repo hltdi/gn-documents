@@ -2,7 +2,7 @@
 
 /* App Module */
 
-angular.module('gndocuments', ['totalFilesServices']).
+angular.module('gndocuments', ['totalFilesServices', 'allTagsServices']).
 config(['$locationProvider','$routeProvider',
     function($locationProvider, $routeProvider) {
       $routeProvider.

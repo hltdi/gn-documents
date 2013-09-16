@@ -2,6 +2,7 @@
 
 from bottle import error
 from bottle import request
+from bottle import response
 from bottle import route
 from bottle import static_file
 
@@ -66,10 +67,18 @@ def count_uploaded_files():
     total = len([name for name in os.listdir(UPLOADED_DOCS_DIR) if os.path.isfile(UPLOADED_DOCS_DIR + '/' + name)]) - 1 
     return {'total': total}
 
+@route('/uploaded/alltags')
+def alltags():
+    ## XXX(alexr): do we need to set these?
+    response.set_header('Cache-Control', 'No-Cache')
+    response.set_header("Content-Type", "application/json")
+    return static_file('alltags.json', root='indexdir')
+
 @route('/docs/<fn>')
 def docs(fn):
     return static_file(fn, root='docs')
 
 @route('/buscar/<q>')
 def buscar(q):
+    response.set_header('Cache-Control', 'No-Cache')
     return search.search(q)

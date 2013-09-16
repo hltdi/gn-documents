@@ -57,58 +57,8 @@
       </div> <!-- end cat-institutos -->
       <div id="cat-etiquetas">
       	<h2>Etiquetas</h2>
-        <table width="100%">
-          <tbody>
-            <tr valign="top">
-              <td>
-                <h3>A</h3>
-                <ul>
-                  <li>a-etiqueta1</li>
-                  <li>a-etiqueta2</li>
-                  <li>a-etiqueta3</li>
-                  <li>a-etiqueta4</li>
-                  <li>a-etiqueta5</li>
-                </ul>
-                <h3>B</h3>
-                <ul>
-                  <li>b-etiqueta1</li>
-                  <li>b-etiqueta2</li>
-                </ul>
-                <h3>C</h3>
-                <ul>
-                  <li>c-etiqueta1</li>
-                  <li>c-etiqueta2</li>
-                  <li>c-etiqueta3</li>
-                  <li>c-etiqueta4</li>
-                  <li>c-etiqueta5</li>
-                  <li>c-etiqueta6</li>
-                </ul>
-              </td>
-              <td>
-                <h3>D</h3>
-                <ul>
-                  <li>d-etiqueta1</li>
-                  <li>d-etiqueta2</li>
-                  <li>d-etiqueta3</li>
-                </ul>
-                <h3>E</h3>
-                <ul>
-                  <li>e-etiqueta1</li>
-                  <li>e-etiqueta2</li>
-                  <li>e-etiqueta3</li>
-                  <li>e-etiqueta4</li>
-                </ul>
-                <h3>H</h3>
-                <ul>
-                  <li>h-etiqueta1</li>
-                  <li>h-etiqueta2</li>
-                  <li>h-etiqueta3</li>
-                  <li>h-etiqueta4</li>
-                  <li>h-etiqueta5</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <span ng-repeat="tag in allTags.tags">
+            <a>{{tag}}</a>
+          </span>
       </div> <!-- end cat-etiquetas -->
 </div> <!-- end content -->

@@ -69,7 +69,7 @@ function UploadCtrl($scope, $http) {
 	}
 }
 
-function CatalogCtrl($scope, $http) {
-	
+function CatalogCtrl($scope, $http, AllTags) {
+  $scope.allTags = AllTags.get();
 }
 
